@@ -9,6 +9,6 @@ import java.util.List;
 public interface StopTimeService {
 
 
-    public List<HashMap<String,String>> getStopTimes();
+    public HashMap<String,Integer> getStopTimes();
 
 }
