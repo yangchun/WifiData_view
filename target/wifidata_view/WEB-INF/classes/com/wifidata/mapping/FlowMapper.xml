@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wifidata.dao.FlowDao">
+
+
+    <select id="getEnteredCountByDay" resultType="java.util.HashMap">
+        select * from tb_enteredflow where time = #{0};
+    </select>
+
+    <select id="getNotEnterCountByDay" resultType="java.util.HashMap">
+        select * from tb_notenterflow where time = #{0};
+    </select>
+
+
+</mapper>
