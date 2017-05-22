@@ -13,8 +13,26 @@ $(function() {
            array[2]=data['third'];
             addData(array);
         }
-    })
-
+    });
+    $.ajax({
+        url:'../jumpout/get',
+        type:'GET', //GET
+        timeout:5000,    //超时时间
+        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+        success:function(rs){
+            dataStr=JSON.stringify(rs.data);
+            var data=JSON.parse(dataStr);
+            var array0=new Array(data.length);
+            var array1=new Array(data.length);
+            var array2=new Array(data.length);
+            for(var i=0;i<data.length;i++){
+                array0[i]=data[i].time;
+                array1[i]=data[i].jumpout;
+                array2[i]=data[i].deepview;
+            }
+            addJumpData(array0,array1,array2);
+        }
+    });
 });
 
 function addData(array){
@@ -38,4 +56,48 @@ function addData(array){
         }
         ]
     });
+}
+
+
+
+function addJumpData(array0,array1,array2){
+
+    var chart = new Highcharts.Chart('container1', {
+        title: {
+            text: '跳出率和深访率',
+            x: -20
+        },
+        xAxis: {
+            categories: array0
+        },
+        yAxis: {
+            title: {
+                text: '百分比 (%)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '跳出率',
+            data: array1
+        }, {
+            name: '深访率',
+            data: array2
+        }]
+    });
+
+
+
 }
