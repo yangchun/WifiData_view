@@ -4,7 +4,7 @@
 
 
     <select id="getAllDatas" resultType="java.util.HashMap">
-        select * from tb_jumpout;
+        select * from tb_jumpout order by time;
     </select>
 
 
