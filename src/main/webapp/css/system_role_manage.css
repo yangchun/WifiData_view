@@ -1,0 +1,44 @@
+#fullbg {
+    background-color:gray;
+    left:0;
+    opacity:0.5;
+    position:absolute;
+    top:0;
+    z-index:3;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity:0.5;
+}
+
+
+
+#changeRole {
+    background-color:#fff;
+    border:5px solid rgba(0,0,0, 0.4);
+    height:300px;
+    left:50%;
+    margin:-200px 0 0 -200px;
+    padding:1px;
+    position:fixed !important; /* 娴姩瀵硅瘽妗� */
+    position:absolute;
+    top:50%;
+    width:450px;
+    z-index:5;
+    border-radius:5px;
+    display:none;
+}
+#changeRole table{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#changeRole_button{
+    margin-left: 40%;
+    margin-top: 3%;
+}
+#changeRole button{
+    margin-right: 3%;
+}
+.hid{
+	display:none;
+}

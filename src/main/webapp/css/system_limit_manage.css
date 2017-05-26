@@ -1,0 +1,76 @@
+#fullbg {
+    background-color:gray;
+    left:0;
+    opacity:0.5;
+    position:absolute;
+    top:0;
+    z-index:3;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity:0.5;
+}
+
+
+
+#addNewLimit {
+    background-color:#fff;
+    border:5px solid rgba(0,0,0, 0.4);
+    height:250px;
+    left:50%;
+    margin:-200px 0 0 -200px;
+    padding:1px;
+    position:fixed !important; /* 娴姩瀵硅瘽妗� */
+    position:absolute;
+    top:50%;
+    width:450px;
+    z-index:5;
+    border-radius:5px;
+    display:none;
+}
+#addNewLimit table{
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+#newLimit_button{
+    margin-left: 40%;
+    margin-top: 3%;
+}
+#addNewLimit button{
+    margin-right: 3%;
+}
+
+#changeLimit {
+    background-color:#fff;
+    border:5px solid rgba(0,0,0, 0.4);
+    height:250px;
+    left:50%;
+    margin:-200px 0 0 -200px;
+    padding:1px;
+    position:fixed !important; /* 娴姩瀵硅瘽妗� */
+    position:absolute;
+    top:50%;
+    width:450px;
+    z-index:5;
+    border-radius:5px;
+    display:none;
+}
+
+#changeLimit table{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#changeLimit_button{
+    margin-left: 40%;
+    margin-top: 3%;
+}
+#changeLimit_button button{
+    margin-right: 3%;
+}
+
+
+
+.hid{
+	display:none;
+}
