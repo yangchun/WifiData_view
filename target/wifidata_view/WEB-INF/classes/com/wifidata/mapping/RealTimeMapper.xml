@@ -13,7 +13,7 @@
 
 
     <select id="getOlderFlow" resultType="java.lang.Integer">
-        select count from tb_realflow order by id desc LIMIT 19;
+        select count from tb_realflow order by id desc LIMIT 20;
     </select>
 
 
