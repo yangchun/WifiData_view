@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by yin on 2017-05-22.
@@ -28,6 +29,26 @@ public class RealTimeController {
         HashMap<String,Object> data = realTimeService.getRealTimeFlow();
         return CommonUtil.constructHtmlResponse(1, "ok", data);
     }
+
+
+
+    @RequestMapping("customer/get")
+    @ResponseBody
+    public JSONObject getRealTimeCustomer() {
+        List<HashMap<String,Object>> data = realTimeService.getRealTimeCustomer();
+        return CommonUtil.constructHtmlResponse(1, "ok", data);
+    }
+
+
+    @RequestMapping("flowed/get")
+    @ResponseBody
+    public JSONObject getFlowed() {
+        List<Integer> data = realTimeService.getOlderFlow();
+        return CommonUtil.constructHtmlResponse(1, "ok", data);
+    }
+
+
+
 
 
 }

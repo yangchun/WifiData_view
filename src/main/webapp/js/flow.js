@@ -195,3 +195,11 @@ function addDateToFlowRate(time,array){
         }]
     });
 }
+
+
+function jump()
+{
+    var sadate = $("#sadate").val();
+    var day = sadate.substring(2,10);
+    window.location.href="http://localhost:8080/html/flow.html?day="+day;
+}

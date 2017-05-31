@@ -13,6 +13,9 @@ public interface RealTimeDao {
 
 
     public HashMap<String,Object> getRealTimeFlow();
+    public List<String> getRealCustomer(String time);
+    public List<Integer> getOlderFlow();
+
 
 
 }

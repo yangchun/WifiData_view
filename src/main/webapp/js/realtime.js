@@ -26,6 +26,23 @@ function getData(){
     return result;
 }
 
+function getOlderData(){
+    var result;//保存x,y数据
+    $.ajax({
+        url:'../realtime/flowed/get',
+        type:'GET', //GET
+        timeout:5000,    //超时时间
+        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+        async :false,
+        success:function(rs){
+            dataStr=JSON.stringify(rs.data);
+            var data=JSON.parse(dataStr);
+            result = data;
+        }
+    });
+    return result;
+}
+
 
 
 $(function() {
@@ -87,10 +104,12 @@ $(function() {
                 var data = [],
                     time = (new Date()).getTime(),
                     i;
+                //获取前19分钟的数据
+                var xdata = getOlderData().reverse();
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 60000,
-                        y: 0
+                        y: xdata[i+19]
                     });
                 }
                 return data;

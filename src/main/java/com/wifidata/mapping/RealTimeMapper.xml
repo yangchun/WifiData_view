@@ -4,7 +4,17 @@
 
 
     <select id="getRealTimeFlow" resultType="java.util.HashMap">
-        select * from tb_realtime order by id desc limit 1
+        select * from tb_realflow order by id desc limit 1;
     </select>
+
+    <select id="getRealCustomer" resultType="java.lang.String">
+        select mac from tb_realcustomer  where time = #{0};
+    </select>
+
+
+    <select id="getOlderFlow" resultType="java.lang.Integer">
+        select count from tb_realflow order by id desc LIMIT 19;
+    </select>
+
 
 </mapper>
